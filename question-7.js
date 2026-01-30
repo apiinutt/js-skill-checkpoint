@@ -1,4 +1,8 @@
 // Question #7: Array Merging
+// - ให้เขียนโค้ดในการรวม Value ของ Array `firstProductList` เข้ากับ `secondProductList`
+// - จากนั้นให้นำผลลัพธ์ใส่ไว้ใน Variable ชื่อว่า `newProductList`
+// - แล้วให้ Log เพื่อดู Value ของ `newProductList`
+// - ผลลัพธ์ที่แสดงบนหน้าจอ Console จะได้
 
 const firstProductList = [
   { id: 1, name: "Laptop", price: 1000 },
@@ -11,3 +15,7 @@ const secondProductList = [
 ];
 
 // เริ่มเขียนโค้ดตรงนี้
+let newProductList = [...firstProductList,...secondProductList]
+console.log(newProductList)
+
+
