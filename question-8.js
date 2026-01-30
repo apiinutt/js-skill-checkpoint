@@ -16,52 +16,52 @@
 
 
 
-// let getUserList = () => {
-//     return fetch('https://jsonplaceholder.typicode.com/users')
-// }
-// async function dashBoard () {
-//     const userList = await getUserList()
-//     const newUsersall = await userList.json()
-//     const newUsers = newUsersall.map((newUsersall) => newUsersall.name)
-//     console.log(newUsers)
-// }
-
-// dashBoard()
-
-
-import https from 'https';
-
-const getUserList = () => {
-  return new Promise((resolve, reject) => {
-    https.get('https://jsonplaceholder.typicode.com/users', (res) => {
-      let data = '';
-
-      res.on('data', chunk => {
-        data += chunk;
-      });
-
-      res.on('end', () => {
-        try {
-          resolve(JSON.parse(data));
-        } catch (err) {
-          reject(err);
-        }
-      });
-
-    }).on('error', err => {
-      reject(err);
-    });
-  });
-};
-
-async function dashBoard() {
-  try {
-     const newUsersall = await getUserList()
+let getUserList = () => {
+     return fetch('https://jsonplaceholder.typicode.com/users')
+ }
+ async function dashBoard () {
+     const userList = await getUserList()
+     const newUsersall = await userList.json()
      const newUsers = newUsersall.map((newUsersall) => newUsersall.name)
      console.log(newUsers)
-  } catch (err) {
-    console.error(err);
-  }
-}
+ }
 
-dashBoard();
+ dashBoard()
+
+
+// import https from 'https';
+
+// const getUserList = () => {
+//   return new Promise((resolve, reject) => {
+//     https.get('https://jsonplaceholder.typicode.com/users', (res) => {
+//       let data = '';
+
+//       res.on('data', chunk => {
+//         data += chunk;
+//       });
+
+//       res.on('end', () => {
+//         try {
+//           resolve(JSON.parse(data));
+//         } catch (err) {
+//           reject(err);
+//         }
+//       });
+
+//     }).on('error', err => {
+//       reject(err);
+//     });
+//   });
+// };
+
+// async function dashBoard() {
+//   try {
+//      const newUsersall = await getUserList()
+//      const newUsers = newUsersall.map((newUsersall) => newUsersall.name)
+//      console.log(newUsers)
+//   } catch (err) {
+//     console.error(err);
+//   }
+// }
+
+//  dashBoard();
